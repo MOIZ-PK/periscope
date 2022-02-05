@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:meta/meta.dart';
+// import 'package:meta/meta.dart';
 part 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
@@ -49,6 +49,35 @@ class AuthCubit extends Cubit<AuthState> {
     }on FirebaseAuthException catch(e){
       emit(AuthForgotPasswordError(e.message!));
     }
+  }
+
+  //---google---
+  Future googleAuth() async {
+    emit(const AuthGoogleLoading());
+    try {
+      final GoogleSignInAccount? _googleUser = await _googleSignIn.signIn();
+      if (_googleUser != null) {
+        emit(AuthDefault());
+      } else {
+        final GoogleSignInAuthentication googleAuth =
+        await _googleUser!.authentication;
+        final AuthCredential credential = GoogleAuthProvider.credential(
+          idToken: googleAuth.idToken,
+          accessToken: googleAuth.accessToken,
+        );
+        User? user = (await _firebaseAuth.signInWithCredential(credential)).user;
+        if (user != null) {
+          emit(AuthGoogleSuccess(user: user));
+        }
+      }
+    } catch (e) {
+      emit(AuthGoogleError(error: e.toString()));
+    }
+  }
+
+  Future googleLogout() async {
+    await _googleSignIn.signOut();
+    emit(const AuthLogout());
   }
 
   //---auth logout---

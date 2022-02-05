@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "414684322594",
+    "project_id": "auth-50adc",
+    "storage_bucket": "auth-50adc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414684322594:android:a635536ff573e30412e37b",
+        "android_client_info": {
+          "package_name": "com.example.auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "414684322594-kj7bubsqd5d59l8iveeo0rtnf5fkjauv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtw_DAi7fw1ECsTYdndVW-25_HNJhjzKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "414684322594-kj7bubsqd5d59l8iveeo0rtnf5fkjauv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414684322594:android:fae9b0d0e893acbb12e37b",
+        "android_client_info": {
+          "package_name": "com.example.periscope"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "414684322594-kj7bubsqd5d59l8iveeo0rtnf5fkjauv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtw_DAi7fw1ECsTYdndVW-25_HNJhjzKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "414684322594-kj7bubsqd5d59l8iveeo0rtnf5fkjauv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
