@@ -11,23 +11,25 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<AuthBloc, AuthState>(builder: (context, state) {
       return SafeArea(
-        child: Center(
-            child: SingleChildScrollView(
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Image(
-                  image: AssetImage('assets/logo.png'),
-                  height: 180,
-                  width: 180,
-                ),
-              ]),
-        )),
+        child: Scaffold(
+          body: Center(
+              child: SingleChildScrollView(
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Image(
+                    image: AssetImage('assets/logo.png'),
+                    height: 180,
+                    width: 180,
+                  ),
+                ]),
+          )),
+        ),
       );
     }, listener: (BuildContext context, AuthState state) {
       if (state is UserLoggedInSuccess) {
         Navigator.of(context).pushNamed(AppRoutes.home);
-      } else {
+      } else if (state is UserLoggedInFailure) {
         Navigator.of(context).pushNamed(AppRoutes.login);
       }
     });

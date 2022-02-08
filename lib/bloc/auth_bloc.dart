@@ -14,6 +14,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   Future<void> _handleUserLoggedInCheck(
       CheckUserLoggedIn event, Emitter<AuthState> emit) async {
-    emit(AuthInitial());
+    emit(UserLoggedInProgress());
+
+    emit(UserLoggedInSuccess());
   }
 }
