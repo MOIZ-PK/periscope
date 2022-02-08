@@ -39,6 +39,8 @@ dependencies:
   form_builder_validators: ^7.4.0
   google_sign_in: ^5.2.3
   provider: ^6.0.2
+  agora_rtc_engine: ^4.2.1
+  permission_handler: ^8.3.0
 
 
   # The following adds the Cupertino Icons font to your application.

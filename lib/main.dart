@@ -4,10 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:periscope/app_routes.dart';
 import 'package:periscope/bloc/auth_bloc.dart';
 import 'package:periscope/screens/forgot_screen.dart';
-import 'package:periscope/screens/home_screen.dart';
 import 'package:periscope/screens/login_screen.dart';
 import 'package:periscope/screens/signup_screen.dart';
 import 'package:periscope/screens/splash_screen.dart';
+import 'package:periscope/screens/video_screen.dart';
 import 'package:provider/provider.dart'; //to implement bloc pattern
 
 void main() async {
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         home: const SplashScreen(),
         routes: <String, WidgetBuilder>{
           AppRoutes.login: (_) => const LoginScreen(),
-          AppRoutes.home: (_) => const HomeScreen(),
+          AppRoutes.home: (_) => const VideoScreen(),
           AppRoutes.signup: (_) => const SignupScreen(),
           AppRoutes.forgotPassword: (_) => const ForgotPassword(),
         },
