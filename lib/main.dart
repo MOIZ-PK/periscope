@@ -1,12 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:periscope/app_routes.dart';
-import 'package:periscope/cubit/auth_cubit.dart';
+import 'package:periscope/bloc/auth_bloc.dart';
 import 'package:periscope/screens/forgot_screen.dart';
 import 'package:periscope/screens/home_screen.dart';
 import 'package:periscope/screens/login_screen.dart';
 import 'package:periscope/screens/signup_screen.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:periscope/screens/splash_screen.dart';
 import 'package:provider/provider.dart'; //to implement bloc pattern
 
 void main() async {
@@ -25,23 +26,22 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       //we want to return bloc pattern
       providers: [
-        BlocProvider(create: (_) => AuthCubit()),
+        BlocProvider(create: (_) => AuthBloc()..add(CheckUserLoggedIn())),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Bloc Login',
-        theme:ThemeData(
+        title: 'Periscope',
+        theme: ThemeData(
           primarySwatch: Colors.red,
         ),
-        initialRoute: AppRoutes.login,
+        home: const SplashScreen(),
         routes: <String, WidgetBuilder>{
-          AppRoutes.login:(_) => const LoginScreen(),
-          AppRoutes.home:(_) => const HomeScreen(),
-          AppRoutes.signup:(_) => const SignupScreen(),
-          AppRoutes.forgotPassword:(_) => const ForgotPassword(),
-        } ,
+          AppRoutes.login: (_) => const LoginScreen(),
+          AppRoutes.home: (_) => const HomeScreen(),
+          AppRoutes.signup: (_) => const SignupScreen(),
+          AppRoutes.forgotPassword: (_) => const ForgotPassword(),
+        },
       ),
-
     );
   }
 }
