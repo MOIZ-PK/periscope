@@ -1,7 +1,7 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:periscope/models/bottom_bar.dart';
+import 'package:periscope/screens/video_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -13,9 +13,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int index = 0;
   final List<Widget> _children = [
-    const Center(
-      child: Text('Center 1st of the page'),
-    ),
+    const VideoScreen(),
     const Center(
       child: Text('Center 2nd of the page'),
     ),
@@ -43,7 +41,6 @@ class _HomeScreenState extends State<HomeScreen> {
         showElevation: true,
         itemCornerRadius: 24,
         curve: Curves.easeIn,
-
         onItemSelected: (ind) => setState(() => index = ind),
         items: <BottomNavyBarItem>[
           BottomNavyBarItem(
