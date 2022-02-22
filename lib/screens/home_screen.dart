@@ -1,6 +1,7 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:periscope/screens/join_channel.dart';
 import 'package:periscope/screens/video_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -13,7 +14,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int index = 0;
   final List<Widget> _children = [
-    const VideoScreen(),
+    MyHomePage(),
     const Center(
       child: Text('Center 2nd of the page'),
     ),

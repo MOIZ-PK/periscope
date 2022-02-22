@@ -7,8 +7,6 @@ import 'package:periscope/screens/forgot_screen.dart';
 import 'package:periscope/screens/home_screen.dart';
 import 'package:periscope/screens/login_screen.dart';
 import 'package:periscope/screens/signup_screen.dart';
-import 'package:periscope/screens/splash_screen.dart';
-import 'package:periscope/screens/video_screen.dart';
 import 'package:provider/provider.dart'; //to implement bloc pattern
 
 void main() async {
